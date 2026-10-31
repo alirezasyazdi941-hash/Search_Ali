@@ -1,0 +1,6 @@
+{
+  "name": "ALI Research OS",
+  "description": "Intelligent Scientific Research & Development Operating System: Literature Discovery, Research Gaps, Experiment Lab, and Bilingual Scientific Studio.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

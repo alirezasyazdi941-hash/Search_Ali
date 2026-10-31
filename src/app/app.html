@@ -1,0 +1,71 @@
+<div class="min-h-screen bg-[#030405] text-[#A9E6FF] flex flex-col font-sans selection:bg-[#59D9FF]/20 selection:text-white">
+  <!-- Top Workstation Header -->
+  <app-header 
+    (openOnboarding)="showOnboarding.set(true)" 
+    (openExport)="showExportModal.set(true)" 
+  />
+
+  <!-- Main Body: Responsive Sidebar + Content Canvas -->
+  <div class="flex-1 flex flex-col lg:flex-row">
+    <!-- Navigation Sidebar -->
+    <app-sidebar 
+      [currentTab]="activeTab()" 
+      (tabChange)="setTab($event)" 
+    />
+
+    <!-- Active Workstation Canvas -->
+    <main class="flex-1 p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto w-full overflow-y-auto">
+      @switch (activeTab()) {
+        @case ('command_center') {
+          <app-command-center (navigateTab)="setTab($event)" />
+        }
+        @case ('programs') {
+          <app-programs-view />
+        }
+        @case ('discovery') {
+          <app-discovery-view />
+        }
+        @case ('review_matrix') {
+          <app-matrix-view />
+        }
+        @case ('comparison') {
+          <app-comparison-view />
+        }
+        @case ('gap_analyzer') {
+          <app-gap-analyzer-view />
+        }
+        @case ('experiments') {
+          <app-experiment-lab-view />
+        }
+        @case ('writing_studio') {
+          <app-writing-studio-view />
+        }
+        @case ('project_mgmt') {
+          <app-project-planning-view />
+        }
+        @case ('learning_path') {
+          <app-learning-path-view />
+        }
+        @case ('knowledge_graph') {
+          <app-knowledge-graph-view />
+        }
+        @case ('publication_check') {
+          <app-publication-readiness-view />
+        }
+        @case ('ai_assistant') {
+          <app-assistant-view />
+        }
+      }
+    </main>
+  </div>
+
+  <!-- Onboarding Wizard Modal -->
+  @if (showOnboarding()) {
+    <app-onboarding-modal (close)="showOnboarding.set(false)" />
+  }
+
+  <!-- Backup, Export & Import Modal -->
+  @if (showExportModal()) {
+    <app-export-modal (close)="showExportModal.set(false)" />
+  }
+</div>

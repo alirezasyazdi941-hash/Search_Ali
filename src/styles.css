@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import "tailwindcss";
+
+:root {
+  --bg-deep: #030405;
+  --bg-surface: #080B10;
+  --bg-card: #0D1219;
+  --bg-card-hover: #121A24;
+  --border-subtle: #152232;
+  --border-active: #23405C;
+  --cyan-primary: #59D9FF;
+  --ice-blue: #A9E6FF;
+  --text-muted: #7E9BB0;
+  --text-dim: #4B6375;
+  --accent-glow: rgba(89, 217, 255, 0.15);
+}
+
+html {
+  background-color: #030405;
+  color: #A9E6FF;
+  font-family: 'Vazirmatn', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  color-scheme: dark;
+}
+
+body {
+  background-color: #030405;
+  color: #A9E6FF;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* RTL / LTR Typography */
+[dir="rtl"] {
+  font-family: 'Vazirmatn', system-ui, sans-serif;
+  letter-spacing: 0;
+}
+
+[dir="ltr"] {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+code, pre, .font-mono, .code-editor, .math-block {
+  font-family: 'JetBrains Mono', monospace !important;
+  direction: ltr !important;
+  text-align: left !important;
+  unicode-bidi: isolate;
+}
+
+/* Subtle scientific glow */
+.glow-cyan {
+  box-shadow: 0 0 16px -2px rgba(89, 217, 255, 0.18);
+}
+
+.glow-cyan-sm {
+  box-shadow: 0 0 8px -1px rgba(89, 217, 255, 0.22);
+}
+
+.glow-cyan-border {
+  border-color: rgba(89, 217, 255, 0.4);
+  box-shadow: 0 0 10px rgba(89, 217, 255, 0.15);
+}
+
+/* Scientific Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #040608;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #172738;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #59D9FF;
+}
+
+/* Engineering grid texture */
+.scientific-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(89, 217, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(89, 217, 255, 0.03) 1px, transparent 1px);
+}
+
+/* Precision hairline separators */
+.border-hairline {
+  border-width: 1px;
+  border-color: rgba(89, 217, 255, 0.12);
+}
+
+/* Glass panel */
+.science-panel {
+  background: rgba(8, 11, 16, 0.88);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(89, 217, 255, 0.14);
+}
